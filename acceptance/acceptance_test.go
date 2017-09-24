@@ -14,7 +14,7 @@ var _ = Describe("Manigrep", func() {
 		It("returns the path from root to the matched key", func() {
 			Expect(pathToCmd).To(HaveSuffix("manigrep"))
 
-			command := exec.Command(pathToCmd, "bar assets/small.yml")
+			command := exec.Command(pathToCmd, "--val-search=bar", "--file=assets/small.yml")
 			session, err := gexec.Start(command, GinkgoWriter, GinkgoWriter)
 			Expect(err).NotTo(HaveOccurred())
 

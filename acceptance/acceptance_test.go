@@ -1,8 +1,6 @@
-package main_test
+package acceptance_test
 
 import (
-	//. "github.com/kieron-pivotal/manigrep"
-
 	"os/exec"
 
 	. "github.com/onsi/ginkgo"

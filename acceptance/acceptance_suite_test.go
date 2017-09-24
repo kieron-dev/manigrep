@@ -1,4 +1,4 @@
-package main_test
+package acceptance_test
 
 import (
 	. "github.com/onsi/ginkgo"
@@ -8,9 +8,9 @@ import (
 	"testing"
 )
 
-func TestManigrepIntegration(t *testing.T) {
+func TestAcceptance(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "Manigrep IntegrationSuite")
+	RunSpecs(t, "Acceptance Suite")
 }
 
 var pathToCmd string

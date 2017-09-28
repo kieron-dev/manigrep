@@ -10,7 +10,7 @@ import (
 )
 
 var _ = Describe("Manigrep", func() {
-	Context("matching key values", func() {
+	Context("invoked with a matching key value contained in the given file", func() {
 		It("returns the path from root to the matched key", func() {
 			Expect(pathToCmd).To(HaveSuffix("manigrep"))
 

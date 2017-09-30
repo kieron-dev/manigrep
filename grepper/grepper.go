@@ -7,11 +7,11 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
-type GenericMap map[interface{}]interface{}
+type GenericStruct interface{}
 
 type Grepper struct {
 	filename string
-	data     GenericMap
+	data     GenericStruct
 }
 
 func New(filename string) (*Grepper, error) {

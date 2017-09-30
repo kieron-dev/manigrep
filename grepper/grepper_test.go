@@ -18,6 +18,13 @@ var _ = Describe("Grepper", func() {
 			})
 		})
 
+		Context("when a valid yaml file with top-level list elements is passed to New", func() {
+			It("succeeds without error", func() {
+				_, err := grepper.New(assetPath("small-list.yml"))
+				Expect(err).ToNot(HaveOccurred())
+			})
+		})
+
 		Context("when an invalid yaml file passed to New", func() {
 			It("fails with appropriate error message", func() {
 				_, err := grepper.New(assetPath("small-error.yml"))

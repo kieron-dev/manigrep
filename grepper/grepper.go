@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
+	"github.com/kieron-pivotal/manigrep/traverser"
 	yaml "gopkg.in/yaml.v2"
 )
 
@@ -21,8 +22,9 @@ func New(filename string) (*Grepper, error) {
 	return &gp, nil
 }
 
-func (gp *Grepper) SearchVal(val string) ([]string, error) {
-	return nil, fmt.Errorf("Can't find '%s' in %s", val, gp.filename)
+func (gp *Grepper) SearchVal(val string, resultCh chan string) {
+	tr, _ := traverser.New(&gp.data)
+	go tr.SearchKey(val, resultCh)
 }
 
 func (gp *Grepper) loadFile() error {
